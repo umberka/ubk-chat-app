@@ -45,6 +45,7 @@ dependencies:
   flutter_svg: ^2.0.10+1
   flutter_launcher_icons: ^0.13.1
   intl: ^0.19.0
+  flutter_dotenv: ^5.1.0
 
 dev_dependencies:
   flutter_test:
@@ -75,6 +76,7 @@ flutter:
     - assets/images/logo/
     - assets/images/launcher_icons/
     - assets/images/
+    - .env
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

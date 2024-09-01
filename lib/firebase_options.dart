@@ -4,6 +4,8 @@ import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
 
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
 /// Example:
@@ -49,20 +51,20 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyC1EkGxrPgDxmKWxoo4QVB5VMEJbtLu19I',
-    appId: '1:1092091423161:android:5f2013eea9c95bf9d0ee68',
-    messagingSenderId: '1092091423161',
-    projectId: 'ubk-chat-app',
-    storageBucket: 'ubk-chat-app.appspot.com',
+  static FirebaseOptions android = FirebaseOptions(
+    apiKey: dotenv.env['API_KEY_ANDROID']!,
+    appId: dotenv.env['APP_ID_ANDROID']!,
+    messagingSenderId: dotenv.env['MESSAGING_SENDER_ID_ANDROID']!,
+    projectId: dotenv.env['PROJECT_ID_ANDROID']!,
+    storageBucket: dotenv.env['STORAGE_BUCKET_ANDROID']!,
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDyk7TsvdDP5rNt-9QudbXAOzmBEAuxGvk',
-    appId: '1:1092091423161:ios:2c7fbe7d3e83fd1fd0ee68',
-    messagingSenderId: '1092091423161',
-    projectId: 'ubk-chat-app',
-    storageBucket: 'ubk-chat-app.appspot.com',
-    iosBundleId: 'com.example.chatApp',
+  static FirebaseOptions ios = FirebaseOptions(
+    apiKey: dotenv.env['API_KEY_IOS']!,
+    appId: dotenv.env['APP_ID_IOS']!,
+    messagingSenderId: dotenv.env['MESSAGING_SENDER_ID_IOS']!,
+    projectId: dotenv.env['PROJECT_ID_IOS']!,
+    storageBucket: dotenv.env['STORAGE_BUCKET_IOS']!,
+    iosBundleId: dotenv.env['BUNDLE_ID_IOS']!,
   );
 }
